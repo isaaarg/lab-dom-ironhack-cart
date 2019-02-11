@@ -1,9 +1,21 @@
-function deleteItem(e){
+var products = [
+  {name: "shirt" , price: 17},
+  {name: "pants" , price: 18},
+  {name: "shoes" , price: 15},
+  {name: "socks" , price: 20},
+  {name: "dress" , price: 19},
+]; 
 
+
+function deleteItem(e){
+  
+  getTotalPrice();
 }
 
-function getPriceByProduct(itemNode){
 
+function getPriceByProduct(){
+  var productName = products[0].price
+  return productName
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,7 +23,8 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  var totalPrice = getPriceByProduct() * createQuantityNode()
+  return totalPrice
 }
 
 function createQuantityInput(){
@@ -19,15 +32,21 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
-
+ var newDIV = document.createElement("div")
+ newDIV.innerHTML = "hola"
 }
 
 function createQuantityNode(){
+  var qty = document.getElementsByClassName("quantity")
+  qty.innerHTML = Maht.floor(Math.Random() * 9 + 1)
+  return qty
+
 
 }
 
 function createItemNode(dataType, itemData){
-
+  var showNewProducts = documernt.getElementByClassName("productName")
+  showNewProducts.innerHTML = products[0].name
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
@@ -35,6 +54,8 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
+  var showNewProducts = document.getElementsByClassName("productName")
+  showNewProducts.innerHTML = products[0].name
 
 }
 
